@@ -1,5 +1,5 @@
-name: Logstash
+name: Pure Logstash
 description: |
-  Centralize data processing of all types
-version: 5.1.1-rancher1
+  Centralize data processing of all types Mhmh
+version: 5.1.2 Sili
 category: ELK
