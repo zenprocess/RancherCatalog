@@ -25,21 +25,7 @@
       label: "Logstash filters"
       type: "multiline"
       required: false
-      default: |
-        if ( [channel][job] ) {
-          split {
-              field => "channel[job]"
-          }
-        ruby {
-            code => "require 'digest/md5'; 
-            hasher=String.new
-            hasher << (event['channel']['job']['job_title']['$'] or '')
-            hasher << (event['channel']['job']['link']['$'] or '')
-            event['hash'] = Digest::MD5.hexdigest(hasher)
-            print (Digest::MD5.hexdigest(hasher)) "
-
-            }
-        }
+      default: ""
     - variable: "indexer_outputs"
       description: |
         Logstash indexing tier outputs. These will be added
