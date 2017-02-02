@@ -13,9 +13,13 @@ logstash-indexer:
   - -f
   - /etc/logstash
   image: zenprocess/logstash:5
+  environment:
+    JAVA_OPTS: -Xmx5g -Xms1g
   external_links:
   - ${elasticsearch_link}:elasticsearch
   stdin_open: true
+  volumes:
+  - /home/XML:/home/XML
   labels:
     io.rancher.sidekicks: logstash-indexer-config
     io.rancher.container.hostname_override: container_name
