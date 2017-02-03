@@ -1,6 +1,6 @@
 .catalog:
   name: "Logstash"
-  version: "512SiliEmptyConfig"
+  version: "5.1.2-sili1"
   description: "Logstash: Process Any Data, From Any Source"
   questions:
     - variable: "indexer_inputs"
