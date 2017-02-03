@@ -8,6 +8,7 @@ logstash-indexer:
   tty: true
   volumes_from:
   - logstash-indexer-config
+  mem_reservation: 5369757696 
   command:
   - logstash
   - -f
