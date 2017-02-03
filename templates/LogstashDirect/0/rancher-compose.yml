@@ -1,6 +1,6 @@
 .catalog:
   name: "Logstash"
-  version: "5.2 Sili Version"
+  version: "5.1.2 Sili Version 2 EmptyConfig"
   description: "Logstash: Process Any Data, From Any Source"
   questions:
     - variable: "indexer_inputs"
@@ -10,14 +10,7 @@
       label: "Logstash inputs"
       type: "multiline"
       required: true
-      default: |
-        file {
-          path => "/home/XML/*.json"
-          start_position => "beginning"
-          sincedb_path => "/dev/null"
-          type => "json"
-          codec => "json"
-        }
+      default: ""
     - variable: "indexer_filters"
       description: |
         Logstash indexing tier filters. These will be added
@@ -33,17 +26,7 @@
       label: "Logstash outputs"
       type: "multiline"
       required: true
-      default: |
-        elasticsearch {
-          hosts => ["elasticsearch.rancher.internal:9200"]
-          index => "jobs"
-          action => "update"
-          doc_as_upsert => true
-          document_id => "%{[hash]}
-        }
-        stdout {
-          codec => rubydebug
-        }
+      default: ""
     - variable: "elasticsearch_link"
       description: |
         stack/service link or external service link to elasticsearch
